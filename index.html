@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vedanta Pathology Center</title>
+      <link rel="icon" type="image/png" sizes="32x32" href="/2025100519392010.png">
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+            width: 100%;
+            background-image: url('/2025100417350251.jpg'); /* Replace with your full background image URL */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Overlay for better readability */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        /* Main content wrapper */
+        .content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 400px; /* Limit card width for larger screens */
+            text-align: center;
+        }
+
+        /* Title */
+        .title {
+            font-size: 1.5rem;
+            font-weight: solid;
+            margin-bottom: 1rem;
+            margin-top: -20px; /* move up — adjust number as you like */
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Card */
+        .card {
+            background-color: rgba(255, 255, 255, 0.95);
+            border: 1px solid #000; /* Thin black border */
+            border-radius: 10px;
+            padding: 1.9rem;
+            width: 100%; /* Full width on small screens, but max-width limits it */
+            aspect-ratio: 1; /* Makes it square-ish, but content may adjust */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            margin-bottom: 0rem;
+            margin-top: -40px; /* move card up — increase number to lift more */
+        }
+
+        /* Card header (Master and Name) */
+        .card-header {
+            margin-bottom: 1rem;
+        }
+
+        .patient-name {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Card body (Age/Gender and Date) */
+        .card-body {
+            margin-bottom: 1.5rem;
+        }
+
+        .age-gender {
+            font-size: 1.125rem;
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+
+        .date {
+            font-size: 0.875rem;
+            color: #777;
+            font-weight: 500;
+        }
+
+        /* Download Button */
+        .download-btn {
+            background-color: #908070; /* Green */
+            color: white;
+            border: none;
+            padding: 0.5rem 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .download-btn:hover {
+            background-color: #16a34a; /* Darker green on hover */
+        }
+
+        .download-btn:disabled {
+            background-color: #9ca3af;
+            cursor: not-allowed;
+        }
+
+        /* PDF Icon (SVG) */
+        .pdf-icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        /* Powered by text */
+        .powered-by {
+            font-size: 0.75rem;
+            color: #888;
+            text-align: center;
+            margin-top: 1px;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .title {
+                font-size: .9rem;
+                padding: 0.75rem 1.5rem;
+                        top: -30px;
+        position: relative;
+            }
+    
+        
+
+            .card {
+                padding: 1.rem;
+                aspect-ratio: auto; /* Allow flexibility on small screens */
+            }
+
+            .patient-name {
+                font-size: 1.5rem;
+            }
+
+            .age-gender {
+                font-size: 1rem;
+            }
+
+            body {
+                padding: 10px;
+                background-attachment: scroll; /* Better for mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 1.25rem;
+            }
+
+            .card {
+                padding: 1rem;
+            }
+
+            .patient-name {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Ensure vertical centering on tall screens */
+        @media (min-height: 800px) {
+            body {
+                justify-content: center;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1 class="title">Vedanta Pathology Center</h1>
+        
+        <div class="card">
+            <div class="card-header">
+                <div class="patient-name">Master PRINCE KUMAR</div>
+            </div>
+            
+            <div class="card-body">
+                <div class="age-gender">15 YRS / M</div>
+                <div class="date">12/09/2025</div>
+            </div>
+            
+            <button id="downloadBtn" class="download-btn">
+                <svg class="pdf-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zM14 7V2.07L18.93 7H14zM6 20V4h8v4h4v12H6z"/>
+                    <path d="M10 14h4v2h-4v-2zm0-3h6v2h-6V11zm0-3h6v2h-6V8z"/>
+                </svg>
+                Download Report
+            </button>
+            
+            <div class="powered-by">Powered by Labsmart Software</div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            // Replace this URL with your actual PDF link
+            const pdfUrl = 'https://drive.google.com/file/d/1qbH2XWpHLSQ0YuqLRstCKZENdJlbzva1/view?usp=drivesdk';
+            
+            if (pdfUrl === 'https://vedanta-labreport183.github.io/Download-/') {
+                alert('Please replace the pdfUrl in the script with your actual PDF link!');
+                return;
+            }
+            
+            const button = this;
+            const originalText = button.innerHTML;
+            button.disabled = true;
+            button.innerHTML = '<span>Downloading...</span>'; // Show loading state
+            
+            // Create temporary link for download
+            const link = document.createElement('a');
+            link.href = pdfUrl;
+            link.download = 'Prince_Kumar_Report.pdf'; // Suggested filename
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Reset button after a short delay
+            setTimeout(() => {
+                button.disabled = false;
+                button.innerHTML = originalText;
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
